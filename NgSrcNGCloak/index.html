@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CustomDirective">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax con $http</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<body ng-controller="AppCtrl">
+	<ul class="no-list" ng-cloak>
+		<li ng-repeat="repo in repos">
+			<img ng-src="{{repo.owner.avatar_url}}">
+			<h1>{{repo.name}}</h1>
+		</li>
+
+	</ul>
+
+</body>
+</html>

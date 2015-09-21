@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ToDoList">
+<head>
+	<meta charset="UTF-8">
+	<title>My first Page with AngularJS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<script src="js/angular-local-storage.min.js"></script>
+	<script src="js/controller.js"></script>
+</head>
+<body ng-controller="ToDoController">
+<ul>
+	<li ng-repeat="actividad in todo">
+		{{actividad.description}} -
+		{{actividad.date | date: 'short'}} -
+		<a href="" ng-clsick="removeActv(actividad)" style="color:red;">x</a>
+	</li>
+</ul>
+
+<form ng-submit="addActv()">
+	<input type="text" ng-model="newActv.description">
+	<input type="datetime-local" ng-model="newActv.date">
+	<input type="submit" value="Guardar actividad">
+</form>
+<!--Aqui te puedes ahorrar una funcion que es clean y hacerlo por defecto en el arreglo $scope.todo-->
+<button ng-click="clean()">Limpiar</button>
+</body>
+</html>
